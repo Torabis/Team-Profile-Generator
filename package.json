@@ -1,0 +1,31 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "Generates a webpage that displays my team's basic info",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "inquirer": "^7.3.3",
+    "jest": "^26.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Torabis/Team-Profile-Generator.git"
+  },
+  "keywords": [
+    "profile-generator",
+    "team-info"
+  ],
+  "author": "Torabis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Torabis/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/Torabis/Team-Profile-Generator#readme"
+}
