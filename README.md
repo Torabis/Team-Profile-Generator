@@ -26,9 +26,14 @@ WHEN I decide to finish building my team
 *Link: https://torabis.github.io/Team-Profile-Generator/
 
 ![Screenshot](Capture.PNG)
+![Testing Video](https://drive.google.com/file/d/1Nmw-JpgSphmOJN-WYkpTIVmBn-dROsTl/view)
 
-```lib/           // classes and helper code
-output/        // rendered output
-templates/     // HTML template(s)
-test/          // jest tests
-app.js         // Runs the application```
+```__tests__/            // jest tests
+  Employee.test.js
+  Engineer.test.js
+  Intern.test.js
+  Manager.test.js
+dist/                           // rendered output (HTML) and CSS style sheet
+lib/                // classes
+src/                // template helper code
+Index.js            // runs the application```

@@ -11,7 +11,7 @@ const outDir = path.resolve(__dirname, "dist");
 const outPath = path.join(outDir, "team.html");
 const render = require("./dist/render");
 
-let employees = [];
+const employees = [];
 
 // Basic Questions
 const basicQuestions = [
@@ -36,96 +36,103 @@ const basicQuestions = [
 
 // Manager Questions
 const managerQuestions = [
-    ...basicQuestions,
-    {
-        type: 'input',
-        name: 'officeNumber',
-        message: `Please enter the office number:`,
-    },
+  ...basicQuestions,
+  {
+    type: "input",
+    name: "officeNumber",
+    message: `Please enter the office number:`,
+  },
 ];
 
 // Engineer Questions
 const engineerQuestions = [
-    ...basicQuestions,
-    {
-        type: 'input',
-        name: 'github',
-        message: `Please enter your GitHub username:`,
-    },
+  ...basicQuestions,
+  {
+    type: "input",
+    name: "github",
+    message: `Please enter your GitHub username:`,
+  },
 ];
 
 // // Intern Questions
 const internQuestions = [
-    ...basicQuestions,
-    {
-        type: 'input',
-        name: 'school',
-        message: `Please enter your school's name:`,
-    },
+  ...basicQuestions,
+  {
+    type: "input",
+    name: "school",
+    message: `Please enter your school's name:`,
+  },
 ];
 
-// Select employee role
-const selectQuestions = [
-    {
-        name: "choice",
-        type: "list",
-        message: `Please select the job role:`,
-        choices: ["Engineer", "Intern", "None"],
-    },
-];
-
-
-inquirer.prompt(managerQuestions)
-    .then((response) => {
-        const manager = new Manager(response.name, response.id, response.email, response.officeNumber);
-        employees.push(manager);
-        employeeSelect();
-    });
+// start prompt
+inquirer.prompt(managerQuestions).then((response) => {
+  const manager = new Manager(
+    response.name,
+    response.id,
+    response.email,
+    response.officeNumber
+  );
+  employees.push(manager);
+  employeeSelect();
+});
 // refer to role functions
 function employeeSelect() {
-inquirer.prompt(selectQuestions).then((answers) => {
+  // Select employee role
+  const selectQuestions = [
+    {
+      name: "choice",
+      type: "list",
+      message: `Please select the job role:`,
+      choices: ["Engineer", "Intern", "None"],
+    },
+  ];
+
+  inquirer.prompt(selectQuestions).then((answers) => {
     if (answers.choice === "Engineer") {
-        engineerInfo();
+      engineerInfo();
     }
     if (answers.choice === "Intern") {
-        internInfo();
+      internInfo();
     }
     if (answers.choice === "None") {
-        createHtmlFile();
-        // console.log(employees);
-
+      createHtmlFile();
     }
-});
+  });
 }
-
-// employeeSelect();
-
 
 // call enginner questions and push to employees
 function engineerInfo() {
-    inquirer.prompt(engineerQuestions)
-        .then((response) => {
-            const newEng = new Engineer(response.name, response.id, response.email, response.github);
-            employees.push(newEng);
-            employeeSelect();
-        })
+  inquirer.prompt(engineerQuestions).then((response) => {
+    const newEng = new Engineer(
+      response.name,
+      response.id,
+      response.email,
+      response.github
+    );
+    employees.push(newEng);
+    employeeSelect();
+  });
 }
 
 // call enginner questions and push to employees
 function internInfo() {
-    inquirer.prompt(internQuestions)
-        .then((response) => {
-            const newInt = new Intern(response.name, response.id, response.email, response.school);
-            employees.push(newInt);
-            employeeSelect();
-        })
+  inquirer.prompt(internQuestions).then((response) => {
+    const newInt = new Intern(
+      response.name,
+      response.id,
+      response.email,
+      response.school
+    );
+    employees.push(newInt);
+    employeeSelect();
+  });
 }
 // create html file
-function createHtmlFile () {
-    try {
-        const html = render(employees);
-        fs.writeFileSync(outPath, html);
-    } catch (error) {
-        console.log(error);
-    }    
+function createHtmlFile() {
+  try {
+    const html = render(employees);
+    fs.writeFileSync(outPath, html);
+  } catch (error) {
+    console.log(error);
+  }
 }
