@@ -22,4 +22,12 @@ WHEN I select the intern option
 WHEN I decide to finish building my team
     THEN I exit the application, and the HTML is generated
 
-    
+*Link: https://torabis.github.io/Team-Profile-Generator/
+
+![Screenshot](Capture.PNG)
+
+`lib/           // classes and helper code
+output/        // rendered output
+templates/     // HTML template(s)
+test/          // jest tests
+app.js         // Runs the application`
