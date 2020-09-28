@@ -4,7 +4,7 @@ This app generates a webpage that displays team's basic info
 to have quick access to their emails and GitHub profiles
 
 # Acceptance Criteria
-
+```
 >WHEN I am prompted for my team members and their information
     THEN an HTML file is generated that displays a nicely formatted team roster based on user input
 >WHEN I click on an email address in the HTML
@@ -21,6 +21,7 @@ to have quick access to their emails and GitHub profiles
     THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
 >WHEN I decide to finish building my team
     THEN I exit the application, and the HTML is generated
+```
 
 *Link: https://torabis.github.io/Team-Profile-Generator/
 
