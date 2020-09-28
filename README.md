@@ -26,7 +26,7 @@ WHEN I decide to finish building my team
 *Link: https://torabis.github.io/Team-Profile-Generator/
 
 ![Screenshot](Capture.PNG)
-![Testing Video](https://drive.google.com/file/d/1Nmw-JpgSphmOJN-WYkpTIVmBn-dROsTl/view)
+Testing Video ;https://drive.google.com/file/d/1Nmw-JpgSphmOJN-WYkpTIVmBn-dROsTl/view
 
 ```__tests__/            // jest tests
   Employee.test.js
